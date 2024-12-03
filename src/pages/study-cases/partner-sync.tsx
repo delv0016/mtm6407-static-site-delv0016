@@ -1,31 +1,31 @@
-import React from "react";
-import { useState } from "react";
+import React from "react"
+import { useState } from "react"
 
 const PartnerSync = () => {
   const graphicsImages = [
     "https://placehold.co/600x400",
     "https://placehold.co/600x400",
     "https://placehold.co/600x400",
-  ];
+  ]
 
   const wireframesImages = [
     "https://placehold.co/600x400",
     "https://placehold.co/600x400",
     "https://placehold.co/600x400",
-  ];
+  ]
 
   const Carousel = ({ images }) => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0)
 
     const prevSlide = () => {
-      const index = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
-      setCurrentIndex(index);
-    };
+      const index = currentIndex === 0 ? images.length - 1 : currentIndex - 1
+      setCurrentIndex(index)
+    }
 
     const nextSlide = () => {
-      const index = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
-      setCurrentIndex(index);
-    };
+      const index = currentIndex === images.length - 1 ? 0 : currentIndex + 1
+      setCurrentIndex(index)
+    }
 
     return (
       <div className="relative w-full max-w-4xl mx-auto mt-8">
@@ -47,15 +47,15 @@ const PartnerSync = () => {
           <i className="fas fa-chevron-right"></i>
         </button>
       </div>
-    );
-  };
+    )
+  }
 
   const Section = ({ title, children }) => (
     <section className="mt-16">
       <h2 className="text-3xl font-bold text-gray-800">{title}</h2>
       <div className="text-gray-700 leading-relaxed mt-4">{children}</div>
     </section>
-  );
+  )
 
   const Header = () => (
     <header className="bg-yellow-300 py-8">
@@ -89,7 +89,7 @@ const PartnerSync = () => {
         </div>
       </div>
     </header>
-  );
+  )
   return (
     <main className="container mx-auto py-16 bg-gray-100">
       <Header />
@@ -192,7 +192,7 @@ const PartnerSync = () => {
         </div>
       </Section>
     </main>
-  );
-};
+  )
+}
 
-export default PartnerSync;
+export default PartnerSync

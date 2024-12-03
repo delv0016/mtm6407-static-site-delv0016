@@ -1,6 +1,6 @@
-import React from "react";
-import { useState } from "react";
-import Layout from "../../components/layout";
+import React from "react"
+import { useState } from "react"
+import Layout from "../../components/layout"
 
 const TheSconeWitch = () => {
   const Hero = () => (
@@ -20,25 +20,25 @@ const TheSconeWitch = () => {
         />
       </div>
     </section>
-  );
+  )
 
   const Carousel = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
+    const [currentIndex, setCurrentIndex] = useState(0)
     const images = [
       "https://placehold.co/300x600?text=Image+1",
       "https://placehold.co/300x600?text=Image+2",
       "https://placehold.co/300x600?text=Image+3",
-    ];
+    ]
 
     const prevSlide = () => {
       setCurrentIndex(
-        (prevIndex) => (prevIndex - 1 + images.length) % images.length
-      );
-    };
+        prevIndex => (prevIndex - 1 + images.length) % images.length
+      )
+    }
 
     const nextSlide = () => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    };
+      setCurrentIndex(prevIndex => (prevIndex + 1) % images.length)
+    }
 
     return (
       <div className="relative w-full max-w-md mx-auto mt-4">
@@ -60,8 +60,8 @@ const TheSconeWitch = () => {
           <i className="fas fa-chevron-right"></i>
         </button>
       </div>
-    );
-  };
+    )
+  }
 
   const Content = () => (
     <section className="max-w-4xl mx-auto p-8 bg-[#E6E1F0] text-left">
@@ -145,16 +145,16 @@ const TheSconeWitch = () => {
       <h2 className="text-2xl font-playfair mt-12">High Fidelity Wireframes</h2>
       <Carousel />
     </section>
-  );
+  )
 
   return (
     <Layout>
-    <main>
-      <Hero />
-      <Content />
-    </main>
+      <main>
+        <Hero />
+        <Content />
+      </main>
     </Layout>
-  );
-};
+  )
+}
 
-export default TheSconeWitch;
+export default TheSconeWitch

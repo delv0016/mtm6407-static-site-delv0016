@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 const Footer = () => {
   return (
     <footer className="flex justify-between items-center w-full max-w-4xl px-4 mt-16 mb-16">
@@ -22,7 +22,7 @@ const Footer = () => {
         </a>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

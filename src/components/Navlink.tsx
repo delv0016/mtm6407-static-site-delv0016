@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 const Navlink = () => {
   return (
     <nav className="mt-8">
@@ -20,7 +20,7 @@ const Navlink = () => {
         </li>
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default Navlink;
+export default Navlink

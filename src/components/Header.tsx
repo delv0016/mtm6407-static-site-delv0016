@@ -1,10 +1,11 @@
-import React from "react";
-import Navlink from "./Navlink";
+import React from "react"
+import Navlink from "./Navlink"
+import { useLocation } from '@reach/router';
 
 interface HeaderProps {
-  // Add any props that the Header component expects
 }
 const Header: React.FC<HeaderProps> = () => {
+  const location = useLocation();
   return (
     <header className="text-center mt-16">
       {!location.pathname.includes("study-case") && (
@@ -23,7 +24,7 @@ const Header: React.FC<HeaderProps> = () => {
       )}
       <Navlink />
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
