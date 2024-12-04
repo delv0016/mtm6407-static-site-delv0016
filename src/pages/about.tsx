@@ -1,5 +1,6 @@
 import React from "react"
 import Layout from "../components/layout"
+import { StaticImage } from "gatsby-plugin-image"
 const About = () => {
   return (
     <Layout>
@@ -28,11 +29,14 @@ const About = () => {
             </p>
           </div>
           <div className="md:w-1/2 p-4 flex flex-col items-center">
-            <img
-              src="https://placehold.co/400x400"
-              alt="Portrait of Lia"
-              className="rounded-lg shadow-lg"
-            />
+          <StaticImage
+                src='../images/aboutimg.png'
+                loading="eager"
+                quality={95}
+                formats={["auto", "webp", "avif"]}
+                alt="Pa"
+              /> 
+
             <p className="text-center text-gray-600 mt-2">Hi! This is me</p>
           </div>
         </section>

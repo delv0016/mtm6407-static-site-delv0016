@@ -13,7 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="flex flex-col items-center">
       <Header />
-      <div>{children}</div>
+      <div className="w-full">{children}</div>
       <Footer />
     </div>
   )

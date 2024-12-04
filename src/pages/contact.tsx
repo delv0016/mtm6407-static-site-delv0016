@@ -3,10 +3,10 @@ import Layout from "../components/layout"
 const Contact = () => {
   return (
     <Layout>
-      <main className="w-full max-w-4xl px-4  mt-16">
-        <section className="mb-16 w-full max-w-4xl px-4">
+      <main className="w-full max-w-7xl px-4  mt-16">
+        <section className="mb-16 w-full max-w-full px-4">
           <div className="md:flex md:justify-between">
-            <div className="md:w-1/2 mb-8 md:mb-0">
+            <div className="md:w-1/2 mb-8 md:mb-0 md:ml-36">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">
                 Email me!
               </h2>

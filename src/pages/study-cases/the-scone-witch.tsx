@@ -1,70 +1,41 @@
-import React from "react"
-import { useState } from "react"
-import Layout from "../../components/layout"
+import React from "react";
+import { useState } from "react";
+import Layout from "../../components/layout";
+import Carousel from "../../components/Carousel";
+import Section from "../../components/Section";
+import { StaticImage } from "gatsby-plugin-image"
 
 const TheSconeWitch = () => {
+  const images = [
+   "https://storage.googleapis.com/uxfolio/6701a9282f57330002c08e1c/67420146113cf40002d647c3/c3EjirUnOB60vAj3.png",
+    "https://storage.googleapis.com/uxfolio/6701a9282f57330002c08e1c/67420146113cf40002d647c3/gzakuW2WmSZiZx5Q.png",
+    "https://storage.googleapis.com/uxfolio/6701a9282f57330002c08e1c/67420146113cf40002d647c3/3bOVZeYUphYJPzrv.png",
+  ];
   const Hero = () => (
-    <section className="flex flex-col md:flex-row items-center text-center md:text-left py-12 bg-[#E6E1F0] md:py-24">
-      <div className="md:w-1/2 text-center md:text-left">
-        <h1 className="text-6xl text-[#2E2E2E] font-playfair">
-          The Scone Witch
-        </h1>
-        <p className="text-xl text-[#2E2E2E] mt-4">
+    <div className=" py-8">
+      <div className="container mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 items-center">
+        <div className="text-center">
+          <h1 className="text-5xl font-bold text-gray-800">The Scone Witch</h1>
+          <p className="text-xl text-gray-600 mt-4">
           Redesigning a local bistro's website
-        </p>
-      </div>
-      <div className="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-        <img
-          src="https://placehold.co/600x400"
-          alt="Laptop displaying The Scone Witch website"
+          </p>
+        </div>
+        <div className="text-center">
+        <StaticImage
+          src="../../images/sconewitchthumbnail.png"
+          loading="eager"
+          quality={95}
+          formats={["auto", "webp", "avif"]}
+          alt="Pa"
+          height={400}
         />
+        </div>
       </div>
-    </section>
-  )
-
-  const Carousel = () => {
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const images = [
-      "https://placehold.co/300x600?text=Image+1",
-      "https://placehold.co/300x600?text=Image+2",
-      "https://placehold.co/300x600?text=Image+3",
-    ]
-
-    const prevSlide = () => {
-      setCurrentIndex(
-        prevIndex => (prevIndex - 1 + images.length) % images.length
-      )
-    }
-
-    const nextSlide = () => {
-      setCurrentIndex(prevIndex => (prevIndex + 1) % images.length)
-    }
-
-    return (
-      <div className="relative w-full max-w-md mx-auto mt-4">
-        <img
-          src={images[currentIndex]}
-          alt={`High fidelity wireframe ${currentIndex + 1}`}
-          className="w-full rounded-lg shadow-lg"
-        />
-        <button
-          onClick={prevSlide}
-          className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
-        >
-          <i className="fas fa-chevron-left"></i>
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"
-        >
-          <i className="fas fa-chevron-right"></i>
-        </button>
-      </div>
-    )
-  }
+    </div>
+  );
 
   const Content = () => (
-    <section className="max-w-4xl mx-auto p-8 bg-[#E6E1F0] text-left">
+    <section className="max-w-4xl mx-auto p-8 text-left">
       <p className="text-lg leading-relaxed">
         This project was about designing a new and refreshing digital presence
         for The Scone Witch, a popular bakery in town. The aim was to bring a
@@ -76,7 +47,8 @@ const TheSconeWitch = () => {
         website was not only visually appealing but also user-friendly and
         accessible.
       </p>
-      <h2 className="text-2xl font-playfair mt-12">My role(s)</h2>
+      <Section title="My role(s)">
+      
       <p className="text-lg leading-relaxed">
         In this project, being part of Team Scone Witch, I was responsible for
         creating wireframes and high-fidelity user interface designs, while
@@ -90,7 +62,8 @@ const TheSconeWitch = () => {
         <li>Testing</li>
         <li>Story</li>
       </ul>
-      <h2 className="text-2xl font-playfair mt-12">Objectives</h2>
+      </Section>
+      <Section title="Objectives">
       <p className="text-lg leading-relaxed">
         The main objectives of the redesign were to:
       </p>
@@ -111,14 +84,16 @@ const TheSconeWitch = () => {
           <div>Design</div>
         </div>
       </div>
-      <h2 className="text-2xl font-playfair mt-12">Background</h2>
+      </Section>
+      <Section title="Background">
       <p className="text-lg leading-relaxed">
         The Scone Witch is a popular bakery known for its delicious scones and
         friendly atmosphere. The redesign aimed to reflect the brand's unique
         charm and attract more customers through a modern and user-friendly
         website.
       </p>
-      <h2 className="text-2xl font-playfair mt-12">Target Audience</h2>
+      </Section>
+      <Section title="Target Audience">
       <ul className="list-disc list-inside mt-4">
         <li>
           Primary: Ages 25-45, interested in gourmet baked goods, looking for a
@@ -130,31 +105,41 @@ const TheSconeWitch = () => {
         </li>
         <li>Other: Foodies and culinary enthusiasts</li>
       </ul>
-      <h2 className="text-2xl font-playfair mt-12">New Logo</h2>
-      <img
-        src="https://placehold.co/200x200"
-        alt="The Scone Witch logo"
-        className="mx-auto mt-4"
-      />
-      <h2 className="text-2xl font-playfair mt-12">Low Fidelity Wireframes</h2>
-      <img
-        src="https://placehold.co/600x400"
-        alt="Low fidelity wireframes of The Scone Witch website"
-        className="mx-auto mt-4"
-      />
-      <h2 className="text-2xl font-playfair mt-12">High Fidelity Wireframes</h2>
-      <Carousel />
+      </Section>
+      <Section title="New Logo">
+      <StaticImage
+          src="../../images/logotsw.png"
+          loading="eager"
+          quality={95}
+          formats={["auto", "webp", "avif"]}
+          alt="Logo of The Scone Witch"
+          height={500}
+        />
+      </Section>
+      <Section title="Low Fidelity Wireframes">
+      <StaticImage
+          src="../../images/tsw-lofi.png"
+          loading="eager"
+          quality={95}
+          formats={["auto", "webp", "avif"]}
+          alt="Low fidelity wireframes of The Scone Witch"
+        />
+      </Section>
+  
+      <Section title="High Fidelity Wireframes">
+      <Carousel images={images}/>
+      </Section>
     </section>
-  )
+  );
 
   return (
     <Layout>
-      <main>
-        <Hero />
-        <Content />
-      </main>
+    <main className="container mx-auto py-16">
+      <Hero />
+      <Content />
+    </main>
     </Layout>
-  )
-}
+  );
+};
 
-export default TheSconeWitch
+export default TheSconeWitch;
